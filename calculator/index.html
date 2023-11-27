@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HWcalculator</title>
+</head>
+
+<body>
+    <!--צאט גיפיטי לא הצליח לעזור לי והציע לי להשתמש בפונקציות שלא למדנו גם לאחר מכן הביא לי קוד שכמעט כולו עם דברים שלמדנו שמשום מה לא עבד-->
+    <h1>calculator</h1>
+    <input id="display" type="text">
+    <br><br>
+
+    <button onclick="adddigit(7)">7</button>
+    <button onclick="adddigit(8)">8</button>
+    <button onclick="adddigit(9)">9</button>
+    <button>/</button>
+    <br>
+    <button onclick="adddigit(4)">4</button>
+    <button onclick="adddigit(5)">5</button>
+    <button onclick="adddigit(6)">6</button>
+    <button onclick=>*</button>
+    <br>
+    <button onclick="adddigit(1)">1</button>
+    <button onclick="adddigit(2)">2</button>
+    <button onclick="adddigit(3)">3</button>
+    <button>-</button>
+    <br>
+    <button onclick="adddigit(0)">0</button>
+    <button onclick="clearDisplay()">c</button>
+    <button onclick="equals()">=</button>
+    <button onclick="oper('+')">+</button>
+
+
+
+    <script>
+        let clearflag = false;
+        let lastinput;
+        let op;
+
+
+        function adddigit(num) {
+            clearflag = true
+            display.value += num
+            lastinput = display.value
+        }
+
+        function clearDisplay() {
+            if (clearflag = true) {
+                display.value = ""
+            }
+            clearflag = false
+            lastinput = ""
+        }
+
+        function equals() {
+            oper();
+        }
+
+        //  (ביניים) ניסיתי להפוך את הדגל לפולס כדי שאני אוכל לשמור את האינפוט כאינפוט חדש
+        // ולאחר מכן להריץ  את הפונקציה של אד דיגיט ואז הוא יחזור להיות טרו ואז המשתנה הבוליאני שבאיף יתקיים ואוכל להריץ את הפוונקציה
+
+        function oper(op) {
+
+            clearflag = false
+            let lastinput = currentinput
+            adddigit()
+            if (clearflag = false && op == '+') {
+                (+lastinput + +currentinput) = res
+                res = display.value
+            }
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
